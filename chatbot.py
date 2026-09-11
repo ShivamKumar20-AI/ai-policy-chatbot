@@ -6,6 +6,10 @@ load_dotenv()
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
+# Groq retires models periodically; llama-3.3-70b-versatile was shut down on
+# 16 August 2026. Current catalogue: https://console.groq.com/docs/deprecations
+MODEL_NAME = "openai/gpt-oss-120b"
+
 SYSTEM_PROMPT = """You are an AI governance expert assistant specialising in:
 - The EU AI Act and its risk tiers
 - GDPR and data subject rights
@@ -23,7 +27,7 @@ When answering questions:
 def ask_chatbot(question: str) -> dict:
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model=MODEL_NAME,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": question}

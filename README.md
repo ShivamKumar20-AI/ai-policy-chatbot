@@ -1,6 +1,6 @@
 # AI Policy Explainer Chatbot
 
-An AI governance chatbot powered by Llama 3 via Groq. Ask it anything about the EU AI Act, GDPR, or ISO 42001 and it returns a plain-English answer with the relevant article or clause cited.
+An AI governance chatbot powered by GPT-OSS 120B via Groq. Ask it anything about the EU AI Act, GDPR, or ISO 42001 and it returns a plain-English answer with the relevant article or clause cited.
 
 ---
 
@@ -40,7 +40,7 @@ Returned: Classified as High Risk under Annex III (employment category). Require
 
 | Layer | Technology |
 |---|---|
-| LLM | Llama 3.3 70B via Groq API |
+| LLM | GPT-OSS 120B via Groq API |
 | API | FastAPI |
 | Prompt engineering | System prompt with governance context and citation instructions |
 | Language | Python 3.11+ |
